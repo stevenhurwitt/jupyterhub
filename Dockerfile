@@ -98,4 +98,7 @@ EXPOSE 8000
 LABEL maintainer="Jupyter Project <jupyter@googlegroups.com>"
 LABEL org.jupyter.service="jupyterhub"
 
+RUN python3 -m pip install jupyter
+RUN jupyter notebook --no-browser --ip 0.0.0.0 --port=8889 --allow-root
+
 CMD ["jupyterhub"]
